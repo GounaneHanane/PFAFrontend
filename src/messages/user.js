@@ -1,9 +1,9 @@
 const userMessages = {
   "user.login.success": "Welcome back",
-  "user.login.require": "Bạn cần đăng nhập! Chưa có tài khoản?",
-  "user.logout.sucesss": "Logout Successfully",
-  "user.signup.success": "SignUp Successfully",
-  "user.changePW.sucesss": "Your Password is changed",
-  "user.touchid.fail": "Your device does not support this feature",
+  "user.login.require": "Vous devez vous connecter! Pas de compte?",
+  "user.logout.sucesss": "Déconnexion réussie",
+  "user.signup.success": "Inscription réussie",
+  "user.changePW.sucesss": "Votre mot de passe a été modifié",
+  "user.touchid.fail": "Votre appareil ne prend pas en charge cette fonctionnalité",
 };
 export default userMessages;
