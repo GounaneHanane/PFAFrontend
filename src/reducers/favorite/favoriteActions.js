@@ -29,7 +29,7 @@ export const fetchFavorite = () => {
           dispatch({
             type: FAVORITE_FAILURE,
           });
-          throw new Error("Something went wrong!, can't get favorite list");
+          throw new Error("Une erreur s'est produite! Impossible d'obtenir la liste des favoris");
         }
         const resData = await response.json();
 
@@ -81,7 +81,7 @@ export const addFavorite = (item) => {
         dispatch({
           type: FAVORITE_FAILURE,
         });
-        throw new Error("Something went wrong!");
+        throw new Error("Une erreur s'est produite!");
       }
       dispatch({
         type: ADD_FAVORITE,
@@ -116,7 +116,7 @@ export const removeFavorite = (id) => {
         dispatch({
           type: FAVORITE_FAILURE,
         });
-        throw new Error("Something went wrong!");
+        throw new Error("Une erreur s'est produite!");
       }
       dispatch({
         type: REMOVE_FAVORITE,

@@ -12,7 +12,7 @@ const AskingNotificationPermissonToken = async () => {
     finalStatus = status;
   }
   if (finalStatus !== 'granted') {
-    console.log('Failed to get push token for push notification!');
+    console.log("Échec de l'obtention du jeton push pour la notification push!");
     return (token = '');
   }
   token = (await Notifications.getExpoPushTokenAsync()).data;

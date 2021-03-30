@@ -31,7 +31,7 @@ export const fetchOrder = () => {
         dispatch({
           type: ORDER_FAILURE,
         });
-        throw new Error("Something went wrong! Can't get your order");
+        throw new Error("Un problème est survenu! Impossible d'obtenir votre commande");
       }
       const resData = await response.json();
       const filterUserOrder = resData.content.filter(
@@ -89,7 +89,7 @@ export const addOrder = (
         dispatch({
           type: ORDER_FAILURE,
         });
-        throw new Error("Something went wrong!");
+        throw new Error("Un problème est survenu! ");
       }
       const resData = await response.json();
       dispatch({

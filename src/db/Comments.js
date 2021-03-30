@@ -1,34 +1,34 @@
 export default comments = [
   {
     id: 1,
-    username: "Lionel Nguyen",
-    content: "Sản phẩm đẹp, giao hàng nhanh",
+    username: "Lionel ",
+    content: "Beau produit, livraison rapide",
   },
   {
     id: 2,
-    username: "Kim Tinh",
+    username: "Kim ",
     content:
-      "Mình mua vòng này mang được hơn 1 tháng, vòng rất sáng chất lượng tốt. Cảm ơn Shop nhiều",
+      "J'ai acheté cette bague depuis plus d'un mois, la bague est très brillante et de bonne qualité. Merci beaucoup Shop",
   },
   {
     id: 3,
-    username: "Nam Thọ",
+    username: "Nam ",
     content:
-      "Vòng đẹp, màu sắc như hình, chất lượng thì để mang một thời gian nữa rồi vào đánh giá tiếp ^^",
+      "Joli rond, couleur comme image, qualité, donc pour apporter plus de temps et ensuite une évaluation plus poussée ^^^",
   },
   {
     id: 4,
-    username: "Nguyên Hưng",
-    content: "Cho 5 sao, hàng đẹp xịn xò",
+    username: "Samuel",
+    content: "  Pour 5 étoiles, le produit est très beau",
   },
   {
     id: 5,
-    username: "Hà Bò",
-    content: "Vừa đặt ở đây, chủ shop thân thiện, sản phẩm đẹp",
+    username: "Simon",
+    content: "Je viens de réserver ici, le propriétaire du magasin est sympathique, le produit est magnifique",
   },
   {
     id: 6,
-    username: "Khiêm",
-    content: "Vòng đẹp, chất lượng đúng như quảng cảo",
+    username: "David",
+    content: "Belle bague, la bonne qualité comme annoncé",
   },
 ];

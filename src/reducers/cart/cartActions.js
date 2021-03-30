@@ -34,7 +34,7 @@ export const fetchCart = () => {
           dispatch({
             type: CART_FAILURE,
           });
-          throw new Error("Something went wrong!, can't get your carts");
+          throw new Error("Un problème est survenu! Impossible de récupérer vos paniers");
         }
         const resData = await response.json();
         const filterUserCart = resData.content.filter(
@@ -86,7 +86,7 @@ export const addToCart = (item) => {
         dispatch({
           type: CART_FAILURE,
         });
-        throw new Error("Something went wrong!");
+        throw new Error("Une erreur s'est produite!");
       }
       dispatch({
         type: "ADD_CART",
@@ -123,7 +123,7 @@ export const removeFromCart = (cartId, itemId) => {
         dispatch({
           type: CART_FAILURE,
         });
-        throw new Error("Something went wrong!");
+        throw new Error("Un problème est survenu! ");
       }
       dispatch({
         type: "REMOVE_FROM_CART",
@@ -160,7 +160,7 @@ export const decCartQuantity = (cartId, itemId) => {
         dispatch({
           type: CART_FAILURE,
         });
-        throw new Error("Something went wrong!");
+        throw new Error("");
       }
       dispatch({
         type: "DES_CART_QUANTITY",
@@ -194,7 +194,7 @@ export const resetCart = (cartId) => {
         dispatch({
           type: CART_FAILURE,
         });
-        throw new Error("Something went wrong!");
+        throw new Error("Un problème est survenu!");
       }
 
       dispatch({

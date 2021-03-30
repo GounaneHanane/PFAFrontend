@@ -3,9 +3,9 @@ const slides = [
   {
     id: 1,
     lable: "Mua may mắn",
-    subtitle: "Tìm loại đá yêu thích",
+    subtitle: "Trouvez votre rock préféré",
     des:
-      "Việc lựa chọn một vòng đá phù hợp đem lại lợi ích rất lớn trong sự nghiệp, tình cảm, tiền tài",
+      "Choisir une bague en pierre appropriée apporte de grands avantages en carrière, en amour et en argent",
     imageUrl: require("../assets/Images/slide1.png"),
   },
   {
