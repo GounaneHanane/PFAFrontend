@@ -30,26 +30,26 @@ const { width, height } = Dimensions.get("window");
 const validate = (values) => {
   const errors = {};
   if (!values.email) {
-    errors.email = "Email không được bỏ trống";
+    errors.email = "L'email ne peut pas être vide";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = "Email không hơp lệ";
+    errors.email = "Email invalide";
   }
   if (!values.password) {
-    errors.password = "Mật khẩu không được bỏ trống";
+    errors.password = "Le mot de passe ne peut pas être vide";
   } else if (values.password.length < 6) {
-    errors.password = "Mật khẩu phải nhiều hơn hoặc bằng 6 ký tự";
+    errors.password = "  Le mot de passe doit être supérieur ou égal à 6 caractères";
   }
   if (!values.confirmpassword) {
-    errors.confirmpassword = "Mật khẩu không được bỏ trống";
+    errors.confirmpassword = "Le mot de passe ne peut pas être laissé vide";
   } else if (values.confirmpassword !== values.password) {
-    errors.confirmpassword = "Mật khẩu xác nhận không trùng khớp";
+    errors.confirmpassword = "Le mot de passe de confirmation ne correspond pas";
   }
   if (!values.username) {
-    errors.username = "Tên không được bỏ trống";
+    errors.username = "Le nom ne peut pas être laissé vide";
   } else if (values.username.length > 20) {
-    errors.username = "Tên không vượt quá 20 ký tự";
+    errors.username = "Le nom ne doit pas dépasser 20 caractères";
   } else if (values.username.length < 6) {
-    errors.username = "Tên phải nhiều hơn 6 ký tự";
+    errors.username = "Le nom doit comporter plus de 6 caractères";
   }
 
   return errors;
@@ -73,7 +73,7 @@ const Signup = (props) => {
       await dispatch(SignUpAct(values.username, values.email, values.password));
       reset();
       if (!unmounted.current) {
-        Alert.alert("Signup Successfully", "You can login now", [
+        Alert.alert("Inscription réussie", "Vous pouvez vous connecter maintenant", [
           {
             text: "Okay",
             onPress: () => {
@@ -111,14 +111,12 @@ const Signup = (props) => {
               zIndex: 0,
             }}
           >
-            <View>
-              <CustomText style={styles.title}>REGISTER</CustomText>
-            </View>
+           
             <View>
               <Field
                 name="username"
                 keyboardType="default"
-                label="Your Name"
+                label="Nom"
                 component={renderField}
                 icon="id-card"
                 autoCapitalize={true}
@@ -133,7 +131,7 @@ const Signup = (props) => {
               <Field
                 name="password"
                 keyboardType="default"
-                label="Password"
+                label="Mot de passe"
                 component={renderField}
                 secureTextEntry={showPass ? false : true}
                 passIcon="pass"
@@ -144,7 +142,7 @@ const Signup = (props) => {
               <Field
                 name="confirmpassword"
                 keyboardType="default"
-                label="Confirm Password"
+                label="Confirmer votre mot de passe"
                 component={renderField}
                 secureTextEntry={showConfirmPass ? false : true}
                 passIcon="confirm"
@@ -162,7 +160,7 @@ const Signup = (props) => {
                 {loading ? (
                   <ActivityIndicator size="small" color="#fff" />
                 ) : (
-                  <CustomText style={styles.textSign}>Đăng ký</CustomText>
+                  <CustomText style={styles.textSign}>Inscription</CustomText>
                 )}
               </View>
             </TouchableOpacity>
@@ -192,10 +190,9 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 5,
+    borderRadius: 15,
     flexDirection: "row",
-    backgroundColor: Colors.lighter_green,
-    marginTop: 10,
+    backgroundColor: Colors.my_red,
   },
   title: {
     color: Colors.light_green,

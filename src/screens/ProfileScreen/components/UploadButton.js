@@ -21,10 +21,11 @@ const UploadButton = ({
         style={{
           height: 50,
           justifyContent: "center",
-          backgroundColor: Colors.leave_green,
+          backgroundColor: Colors.my_red,
+          color:"#fff"
         }}
       >
-        Update Profile Picture
+       Mettre à jour l'image de profil
       </Button>
       {!uploadButton ? (
         <Button
@@ -37,7 +38,7 @@ const UploadButton = ({
             height: 50,
             marginTop: 10,
             justifyContent: "center",
-            backgroundColor: Colors.leave_green,
+            backgroundColor: Colors.my_red,
           }}
         >
           Cancel
@@ -59,6 +60,7 @@ UploadButton.propTypes = {
 const styles = StyleSheet.create({
   button: {
     marginTop: 30,
+    color:'#fff'
   },
 });
 

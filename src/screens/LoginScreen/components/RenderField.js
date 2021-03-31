@@ -18,7 +18,7 @@ export default renderField = ({
   input: { onChange, ...restInput },
 }) => {
   return (
-    <View>
+    <View style={{marginBottom:10}}>
       <View>
         <TextInput
           placeholder={label}
@@ -31,14 +31,21 @@ export default renderField = ({
             <TextInput.Icon
               name={icon}
               size={24}
-              color={Colors.lighter_green}
-              style={{ paddingRight: 10 }}
+              color={'#b74825'}
+              style={{ paddingRight: 10, justifyContent: 'center',
+              alignContent: 'center',
+              justifyContent:'center' }}
             />
           }
+          underlineColorAndroid ='transparent'
           style={{
             fontSize: 14,
-            backgroundColor: "transparent",
-            marginVertical: 5,
+            fontWeight: "bold",
+           backgroundColor: "transparent" ,
+           borderBottom:1, 
+           height: 40,
+           borderRadius: 15,
+            
             // paddingHorizontal: 5,
           }}
           keyboardType={keyboardType}

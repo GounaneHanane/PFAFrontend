@@ -22,7 +22,7 @@ export class TotalButton extends React.PureComponent {
           <CustomText
             style={{ fontSize: 14, fontWeight: '500', color: Colors.text }}
           >
-            Thành tiền
+           Prix total
           </CustomText>
           <NumberFormat price={total.toString()} style={{ fontSize: 14 }} />
         </View>
@@ -38,7 +38,8 @@ export class TotalButton extends React.PureComponent {
         >
           <View style={styles.btn}>
             <CustomText style={{ color: '#fff', fontSize: 16 }}>
-              Tiến hành đặt hàng
+              
+Passer à la commande
             </CustomText>
           </View>
         </TouchableOpacity>

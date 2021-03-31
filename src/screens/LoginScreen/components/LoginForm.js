@@ -36,14 +36,14 @@ const { height } = Dimensions.get("window");
 const validate = (values) => {
   const errors = {};
   if (!values.email) {
-    errors.email = "Email không được bỏ trống";
+    errors.email = "L'email ne peut pas être vide";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = "Email không hơp lệ";
+    errors.email = "Email invalide";
   }
   if (!values.password) {
-    errors.password = "Mật khẩu không được bỏ trống";
+    errors.password = "Le mot de passe ne peut pas être vide";
   } else if (values.password.length < 6) {
-    errors.password = "Mật khẩu phải nhiều hơn hoặc bằng 6 ký tự";
+    errors.password = "Le mot de passe doit être supérieur ou égal à 6 caractères";
   }
   return errors;
 };
@@ -57,7 +57,7 @@ const Login = (props) => {
   const scanFingerprintOrFaceId = async () => {
     const resData = await SecureStore.getItemAsync(secretKey);
     if (resData === null) {
-      return alert("You have to enable LOGIN by touch/face ID");
+      return alert("Vous devez activer la connexion par identification tactile / faciale");
     }
     const result = await LocalAuthentication.authenticateAsync({
       promptMessage: "Authenticating",
@@ -70,17 +70,17 @@ const Login = (props) => {
 
   const showAndroidAlert = () => {
     Alert.alert(
-      "Fingerprint Scan",
-      "Place your finger over the touch sensor and press scan.",
+      "Scan d'empreintes digitales",
+      "Placez votre doigt sur le capteur tactile et appuyez sur scan.",
       [
         {
-          text: "Scan",
+          text: "Scanner",
           onPress: () => {
             scanFingerprintOrFaceId();
           },
         },
         {
-          text: "Cancel",
+          text: "Annuler",
           onPress: () => console.log("Cancel"),
           style: "cancel",
         },
@@ -115,17 +115,16 @@ const Login = (props) => {
       </TouchableOpacity>
 
       <View style={styles.header}>
-        <View>
-          <CustomText style={styles.title}>LOGIN</CustomText>
-        </View>
+      
       </View>
       <ScrollView>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View
             style={{
               flexDirection: "column",
-              marginHorizontal: 10,
+              marginHorizontal: 20,
               zIndex: -1,
+              marginTop:50
             }}
           >
             <View>
@@ -139,7 +138,7 @@ const Login = (props) => {
               <Field
                 name="password"
                 keyboardType="default"
-                label="Password"
+                label="Mot de passe"
                 component={renderField}
                 secureTextEntry={showPass ? false : true}
                 passIcon="eye"
@@ -149,6 +148,20 @@ const Login = (props) => {
               />
             </View>
             <View style={styles.group}>
+           
+           <View style={styles.circleImage}>
+             <TouchableOpacity
+               onPress={
+                 Platform.OS === "android"
+                   ? showAndroidAlert
+                   : scanFingerprintOrFaceId
+               }
+             >
+               <CustomText style={styles.loginOpt}>
+                Face Id?
+           </CustomText>
+             </TouchableOpacity>
+             </View>
               <TouchableOpacity
                 onPress={() => {
                   props.navigation.navigate("ForgetPwScreen");
@@ -160,7 +173,7 @@ const Login = (props) => {
                     fontFamily: "Roboto-Medium",
                   }}
                 >
-                  Forget Password ?
+                  Mot de passe oublié ?
                 </CustomText>
               </TouchableOpacity>
             </View>
@@ -172,31 +185,13 @@ const Login = (props) => {
                 {auth.isLoading ? (
                   <ActivityIndicator size="small" color="#fff" />
                 ) : (
-                  <CustomText style={styles.textSign}>Đăng nhập</CustomText>
+                  <CustomText style={styles.textSign}>Connexion</CustomText>
                 )}
               </View>
             </TouchableOpacity>
           </View>
         </TouchableWithoutFeedback>
-        <View style={styles.center}>
-          <CustomText style={styles.loginOpt}>
-            Hoặc đăng nhập bằng khuôn mặt/vân tay
-          </CustomText>
-          <View style={styles.circleImage}>
-            <TouchableOpacity
-              onPress={
-                Platform.OS === "android"
-                  ? showAndroidAlert
-                  : scanFingerprintOrFaceId
-              }
-            >
-              <Image
-                source={require("../../../assets/Images/faceid.png")}
-                style={styles.faceid}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
+       
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -209,7 +204,7 @@ Login.propTypes = {
 const styles = StyleSheet.create({
   group: {
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     marginVertical: 10,
   },
   header: {
@@ -218,10 +213,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   title: {
-    color: Colors.light_green,
-    fontSize: 40,
-    letterSpacing: 5,
-    fontFamily: "Roboto-Bold",
+    color: "black",
+    fontSize: 30,
+    fontFamily: 'sans-serif',
+    fontWeight: 'normal',
     textAlign: "center",
   },
   text: {
@@ -232,30 +227,30 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 5,
+    borderRadius: 15,
     flexDirection: "row",
-    backgroundColor: Colors.lighter_green,
+    backgroundColor: "#fff",
   },
   textSign: {
     fontSize: 15,
-    color: "#fff",
+    color: "#b74825",
     fontFamily: "Roboto-Medium",
+    
+    
   },
   textSignSmall: {
     color: Colors.lighter_green,
     textAlign: "center",
+    fontSize:12,
+    marginBottom:10
   },
   center: {
     alignItems: "center",
   },
   circleImage: {
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: 2,
-    padding: 20,
     borderRadius: 55,
     borderStyle: "dashed",
-    borderColor: Colors.grey,
+    borderColor: "#fff",
   },
   faceid: {
     resizeMode: "contain",
@@ -263,9 +258,8 @@ const styles = StyleSheet.create({
     width: 70,
   },
   loginOpt: {
-    color: Colors.lighter_green,
-    fontFamily: "Roboto-Medium",
-    marginBottom: 10,
+    color: Colors.my_red,
+    marginBottom: 9,
   },
 });
 export const LoginForm = reduxForm({

@@ -27,7 +27,7 @@ export const ProfilePic = ({
   const { showActionSheetWithOptions } = useActionSheet();
 
   const UploadProfileHandler = () => {
-    const options = ["Take Photo", "Choose From Library", "Cancel"];
+    const options = ["Prendre une photo", "Choisissez dans la bibliothèque", "Annuler"];
 
     showActionSheetWithOptions(
       {
@@ -113,12 +113,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: Colors.leave_green,
+    backgroundColor: Colors.my_red,
   },
   userName: {
     fontSize: 20,
     marginTop: 10,
-    color: Colors.leave_green,
+    color: Colors.black,
     textAlign: "center",
   },
 });

@@ -13,8 +13,9 @@ const Detail = ({ icon, content }) => {
       : MaterialCommunityIcons;
   return (
     <View style={styles.infoContainer}>
-      <Icon name={icon} size={28} color={Colors.grey} />
+     
       <CustomText style={styles.detailText}>{content}</CustomText>
+      <Icon name={icon} size={28} color={Colors.grey} />
     </View>
   );
 };

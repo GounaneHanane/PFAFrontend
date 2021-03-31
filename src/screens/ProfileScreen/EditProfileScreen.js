@@ -34,7 +34,7 @@ export const EditProfileScreen = (props) => {
         alert(err);
       }
     } else {
-      return Alert.alert("Error", "Thông tin không hợp lệ. Vui lòng nhập lại", [
+      return Alert.alert("Erreur", "Information invalide. Veuillez saisir à nouveau", [
         {
           text: "OK",
         },
@@ -97,7 +97,7 @@ export const EditProfileScreen = (props) => {
               marginHorizontal: 10,
             }}
           >
-            Update Your Information
+          Mettez à jour vos informations
           </Button>
         </View>
       </View>

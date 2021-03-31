@@ -16,17 +16,18 @@ export const ProfileBody = ({
   return (
     <View style={styles.footer}>
       <View style={styles.titleContainer}>
-        <CustomText style={styles.title}>Thông tin cá nhân</CustomText>
+        <CustomText style={styles.title}>
+Informations personnelles</CustomText>
       </View>
       <Detail icon='person' content={user.name} />
       <Detail icon='email-outline' content={user.email} />
       <Detail
         icon='phone'
-        content={user.phone.length === 0 ? "Not added yet" : user.phone}
+        content={user.phone.length === 0 ? "Pas encore ajouté" : user.phone}
       />
       <Detail
         icon='location-on'
-        content={user.address.length === 0 ? "Not added yet" : user.address}
+        content={user.address.length === 0 ? "Pas encore ajouté" : user.address}
       />
       <UploadButton
         uploadButton={uploadButton}

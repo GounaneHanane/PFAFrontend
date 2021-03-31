@@ -11,7 +11,7 @@ export default {
   light_bg: "#e0e0e2",
   light_green: "#0f7e4a",
   // light_green: "#18945a",
-  lighter_green: "#2ba56a",
+  lighter_yelow: "#eeb60b",
   leave_green: "#18a561",
   purple: "#876aba",
   water: "#6f8bc8",
@@ -21,4 +21,5 @@ export default {
   blue: "#1A91DA",
   bluegreen: "#2CB9B0",
   black: "#000000",
+  my_red:"#b74825"
 };

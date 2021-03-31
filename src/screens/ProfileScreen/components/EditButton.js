@@ -11,7 +11,7 @@ export const EditButton = ({ navigation, user }) => {
       <TouchableOpacity
         onPress={() => navigation.navigate("ProfileEdit", { user })}
       >
-        <FontAwesome5 name='user-edit' size={20} color={Colors.leave_green} />
+        <FontAwesome5 name='user-edit' size={20} color={Colors.my_red} />
       </TouchableOpacity>
     </View>
   );

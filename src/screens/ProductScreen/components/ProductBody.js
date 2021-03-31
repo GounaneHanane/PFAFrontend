@@ -30,9 +30,9 @@ export const ProductBody = ({
   );
   const rings = productsFilter.filter((ring) => ring.type === 'ring');
   const stones = productsFilter.filter((stone) => stone.type === 'stone');
-  DATA.push({ title: 'Vòng Chuối Ngọc', data: bracelets });
-  DATA.push({ title: 'Nhẫn Ruby', data: rings });
-  DATA.push({ title: 'Đá Quý', data: stones });
+  DATA.push({ title: 'Bracelets', data: bracelets });
+  DATA.push({ title: 'Bagues', data: rings });
+  DATA.push({ title: 'Pierres', data: stones });
   const scrollY = new Value(0);
   const sectionListRef = useRef(null);
   // const scrollToSection = (index) => {
@@ -67,30 +67,14 @@ export const ProductBody = ({
       </TouchableWithoutFeedback>
       {productsFilter.length === 0 ? (
         <CustomText style={{ textAlign: 'center', marginTop: 110 }}>
-          Không tìm thấy sản phẩm
+         
+Aucune annonce trouvée
         </CustomText>
       ) : (
-        <AnimatedSectionList
-          sections={DATA} // REQUIRED: SECTIONLIST DATA
-          keyExtractor={(item) => item._id}
-          ref={sectionListRef}
-          renderSectionHeader={({ section: { title } }) => (
-            <View style={styles.header}>
-              <CustomText style={styles.title}>{title}</CustomText>
-            </View>
-          )}
-          renderItem={({ item }) => (
-            <HorizontalItem item={item} navigation={navigation} />
-          )}
-          stickySectionHeadersEnabled={false}
-          scrollEventThrottle={1}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-            { useNativeDriver: true },
-            // { listener: HandleScrollY, useNativeDriver: false }
-          )}
-          contentContainerStyle={{ marginTop: 90, paddingBottom: 100 }}
-        />
+        <CustomText style={{ textAlign: 'center', marginTop: 110 }}>
+         
+        Aucune annonce trouvée
+                </CustomText>
       )}
       {/* <View style={styles.tabBar}>
         <FlatList

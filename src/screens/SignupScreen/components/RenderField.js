@@ -33,14 +33,22 @@ export default renderField = ({
           <TextInput.Icon
             name={icon}
             size={24}
-            color={Colors.lighter_green}
-            style={{ paddingRight: 10 }}
+            color={Colors.my_red}
+            style={{ paddingRight: 10, justifyContent: 'center',
+            alignContent: 'center',
+            justifyContent:'center' }}
           />
         }
         style={{
           fontSize: 14,
-          backgroundColor: "transparent",
+        
           marginVertical: 5,
+          fontSize: 14,
+          fontWeight: "bold",
+         backgroundColor: "transparent" ,
+         borderBottom:1, 
+         height: 40,
+         borderRadius: 15,
           // paddingHorizontal: 5,
         }}
         keyboardType={keyboardType}
